@@ -1,8 +1,8 @@
 @echo off
 
-set USER=ashokas.crypt@gmail.com
-set PASSWORD=ashok.net4.0
-set HOST=api.changeip.us
+set USER=
+set PASSWORD=
+set HOST= 
 
 :loop
 
