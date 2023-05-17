@@ -6,10 +6,13 @@ set HOST=
 
 :loop
 
-for /f "tokens=2 delims=:" %%A in ('nslookup myip.opendns.com resolver1.opendns.com ^| find "Address"') do set MYIP=%%A
-set MYIP=%MYIP: =%
-set MYIP=%MYIP: =%
+curl -s ip.changeip.com >output.txt
+set response=<output.txt
 
+
+for /f "tokens=4" %%i in ("%response%") do (
+    set MYIP=%%i
+)
 
 set params="u=%USER%&p=%PASSWORD%&myip=%MYIP%&hostname=%HOST%&set=1"
 set URL="https://nic.ChangeIP.com/nic/update"
